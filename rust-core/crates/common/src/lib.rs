@@ -1,5 +1,5 @@
 // Common utilities and shared functionality
 
-pub fn example_function() {
-    // Add your common functions here
-}
+pub mod domain;
+pub mod helper;
+pub mod interface;

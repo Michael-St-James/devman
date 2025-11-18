@@ -5,7 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/crates/auth/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/crates/common/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/crates/journal/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/crates/auth/target" />
       <excludeFolder url="file://$MODULE_DIR$/crates/common/target" />
       <excludeFolder url="file://$MODULE_DIR$/crates/journal/target" />
