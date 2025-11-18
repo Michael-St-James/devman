@@ -1,0 +1,6 @@
+namespace my_core {};
+
+interface Calculator {
+u32 add(u32 a, u32 b);
+string greet(string name);
+};

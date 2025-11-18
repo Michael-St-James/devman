@@ -1,0 +1,4 @@
+[toolchain]
+# Pin this project to the GNU (MinGW) toolchain on Windows instead of MSVC.
+# This ensures cargo/rustc use the x86_64-pc-windows-gnu host toolchain.
+channel = "stable-x86_64-pc-windows-gnu"

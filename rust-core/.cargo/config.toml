@@ -1,0 +1,8 @@
+[build]
+# Always build using the GNU (MinGW) target on Windows
+target = "x86_64-pc-windows-gnu"
+
+# If your environment provides a specific MinGW GCC, you can uncomment below.
+# Cargo/rustc will generally pick the right linker for the -gnu target automatically.
+# [target.x86_64-pc-windows-gnu]
+# linker = "x86_64-w64-mingw32-gcc"
