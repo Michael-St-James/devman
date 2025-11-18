@@ -1,11 +1,11 @@
+// Journal and logging functionality
 use std::sync::Arc;
 
-#[derive(uniffi::Object)]
+uniffi::setup_scaffolding!();
+
 pub struct Calculator;
 
-#[uniffi::export]
 impl Calculator {
-    #[uniffi::constructor]
     pub fn new() -> Arc<Self> {
         Arc::new(Calculator)
     }
@@ -18,7 +18,3 @@ impl Calculator {
         format!("Hello, {name}, from Rust!")
     }
 }
-
-// This line pulls in the UniFFI-generated glue at compile time.
-// "my_core" must match the UDL file stem (my_core.udl).
-uniffi::setup_scaffolding!("my_core");
