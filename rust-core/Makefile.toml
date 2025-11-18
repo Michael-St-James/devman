@@ -1,0 +1,40 @@
+[tasks.build-and-copy]
+description = "Build journal crate and copy DLL to Compose app"
+dependencies = ["build-journal", "copy-dll"]
+
+[tasks.build-journal]
+description = "Build the journal crate"
+command = "cargo"
+args = ["build", "-p", "journal", "--release"]
+
+[tasks.copy-dll]
+description = "Copy journal DLL to Compose app libs folder"
+script_runner = "@shell"
+script = '''
+mkdir -p ../compose-app/libs 2>NUL || true
+copy target\\release\\journal.dll ..\\compose-app\\libs\\journal.dll
+echo "✓ Copied journal.dll to compose-app/libs/"
+'''
+
+[tasks.build-and-copy-debug]
+description = "Build journal crate (debug) and copy DLL to Compose app"
+dependencies = ["build-journal-debug", "copy-dll-debug"]
+
+[tasks.build-journal-debug]
+description = "Build the journal crate in debug mode"
+command = "cargo"
+args = ["build", "-p", "journal"]
+
+[tasks.copy-dll-debug]
+description = "Copy journal DLL (debug) to Compose app libs folder"
+script_runner = "@shell"
+script = '''
+mkdir -p ../compose-app/libs 2>NUL || true
+copy target\\debug\\journal.dll ..\\compose-app\\libs\\journal.dll
+echo "✓ Copied journal.dll (debug) to compose-app/libs/"
+'''
+
+[tasks.watch-and-copy]
+description = "Watch for changes and auto-build + copy DLL"
+command = "cargo"
+args = ["watch", "-w", "crates/journal", "-x", "make build-and-copy-debug"]
